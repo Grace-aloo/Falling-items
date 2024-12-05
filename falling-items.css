@@ -34,8 +34,8 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-   75% {
-    transform: translateY(75vh);
+   25% {
+    transform: translateY(25vh);
     opacity: 1;
   }
   100% {
