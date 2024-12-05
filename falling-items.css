@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.falling-items-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Ensure it doesn't block clicks */
+  z-index: 1000; /* Place above all content */
+}
+
+.falling-item {
+  position: absolute;
+  top: -200px; /* Start slightly above the viewport */
+  animation: fall 4s linear forwards;
+  animation-delay: calc(var(--fall-index) * 0.9s); /* Staggered start */
+  opacity: 0;
+}
+
+.falling-item img {
+  width: auto;
+  height: auto;
+  max-width: 200px; /* Adjust size limits */
+  max-height: 200px;
+}
+
+/* Falling animation */
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+   75% {
+    transform: translateY(75vh);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh); /* Move beyond the viewport */
+    opacity: 0;
+  }
+}
+
+/* Position items horizontally to prevent overlap */
+.falling-item.one { left: 70%; --fall-index: 0; }
+.falling-item.two { left: 85%; --fall-index: 1; }
+.falling-item.three { left: 55%; --fall-index: 2; }
+.falling-item.four { left: 40%; --fall-index: 3; }
+.falling-item.five { left: 10%; --fall-index:11; }
+.falling-item.six { left: 25%; --fall-index: 5; }
+.falling-item.seven { left: 79%; --fall-index: 6; }
+.falling-item.eight { left: 30%; --fall-index: 7; }
+.falling-item.nine { left: 20%; --fall-index: 8; }
+.falling-item.ten { left: 94%; --fall-index: 9; }
+.falling-item.eleven { left: 45%; --fall-index: 10; }
+.falling-item.twelve { left: 50%; --fall-index: 4; }
+.falling-item.thirteen { left: 15%; --fall-index: 12; }
+.falling-item.fourteen { left: 70%; --fall-index: 13; }
