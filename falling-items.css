@@ -27,6 +27,12 @@ body {
   max-width: 200px; /* Adjust size limits */
   max-height: 200px;
 }
+@media (max-width: 480px) {
+  .falling-item img {
+      max-width: 150px; /* Even smaller width for very small screens */
+      max-height: 150px; /* Even smaller height for very small screens */
+  }
+}
 
 /* Falling animation */
 @keyframes fall {
@@ -34,8 +40,8 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-  50% {
-    transform: translateY(50vh);
+  25% {
+    transform: translateY(25vh);
     opacity: 1;
   }
   100% {

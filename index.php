@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
 function falling_items_enqueue_assets() {
     // Check if the plugin is enabled
     $is_enabled = get_option('falling_items_enabled', 1); // Default to enabled
-    if ($is_enabled) {
+    if ($is_enabled && is_front_page()) {
         // Enqueue CSS
         wp_enqueue_style('falling-items-style', plugin_dir_url(__FILE__) . 'falling-items.css');
         
@@ -31,7 +31,7 @@ add_action('wp_enqueue_scripts', 'falling_items_enqueue_assets');
 function falling_items_add_overlay() {
     // Check if the plugin is enabled
     $is_enabled = get_option('falling_items_enabled', 1); // Default to enabled
-    if ($is_enabled) {
+    if ($is_enabled && is_front_page()) {
         ?>
         <div class="falling-items-overlay">
             
